@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="120" viewBox="0 0 820 120">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#206be7"/>
+      <stop offset="1" stop-color="#83b4ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="820" height="120" rx="12" fill="url(#g)"/>
+  <circle cx="94" cy="60" r="42" fill="#fff" opacity=".18"/>
+  <rect x="170" y="35" width="260" height="18" rx="9" fill="#fff" opacity=".32"/>
+  <rect x="170" y="66" width="410" height="14" rx="7" fill="#fff" opacity=".2"/>
+  <text x="735" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#fff" opacity=".92">AD</text>
+</svg>

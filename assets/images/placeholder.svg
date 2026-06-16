@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="300" viewBox="0 0 480 300" role="img" aria-label="AntNews">
+  <rect width="480" height="300" fill="#eef3ff"/>
+  <circle cx="92" cy="86" r="34" fill="#206be7" opacity=".18"/>
+  <rect x="140" y="90" width="240" height="18" rx="9" fill="#206be7" opacity=".25"/>
+  <rect x="92" y="140" width="296" height="14" rx="7" fill="#206be7" opacity=".18"/>
+  <rect x="92" y="170" width="220" height="14" rx="7" fill="#206be7" opacity=".14"/>
+  <text x="240" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#206be7">AntNews</text>
+</svg>
