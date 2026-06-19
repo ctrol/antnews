@@ -14,7 +14,48 @@ get_header();
             while ( have_posts() ) :
                 the_post();
                 get_template_part( 'template-parts/content', 'single' );
-                the_post_navigation();
+
+                /* Custom post navigation with thumbnails */
+                $prev_post = get_previous_post();
+                $next_post = get_next_post();
+                if ( $prev_post || $next_post ) :
+                    ?>
+                    <nav class="post-navigation antnews-post-nav" aria-label="<?php esc_attr_e( '文章导航', 'antnews' ); ?>">
+                        <div class="nav-links">
+                            <?php if ( $prev_post ) : ?>
+                                <a href="<?php echo esc_url( get_permalink( $prev_post ) ); ?>" class="nav-card nav-prev">
+                                    <span class="nav-corner-label">&laquo; <?php esc_html_e( '上一篇', 'antnews' ); ?></span>
+                                    <?php
+                                    if ( has_post_thumbnail( $prev_post ) ) {
+                                        echo get_the_post_thumbnail( $prev_post, 'antnews-small' );
+                                    } else {
+                                        echo '<img src="' . esc_url( antnews_get_image_url( 'antnews-small' ) ) . '" alt="">';
+                                    }
+                                    ?>
+                                    <div class="nav-card-overlay">
+                                        <span class="nav-card-title"><?php echo esc_html( get_the_title( $prev_post ) ); ?></span>
+                                    </div>
+                                </a>
+                            <?php endif; ?>
+                            <?php if ( $next_post ) : ?>
+                                <a href="<?php echo esc_url( get_permalink( $next_post ) ); ?>" class="nav-card nav-next">
+                                    <span class="nav-corner-label"><?php esc_html_e( '下一篇', 'antnews' ); ?> &raquo;</span>
+                                    <?php
+                                    if ( has_post_thumbnail( $next_post ) ) {
+                                        echo get_the_post_thumbnail( $next_post, 'antnews-small' );
+                                    } else {
+                                        echo '<img src="' . esc_url( antnews_get_image_url( 'antnews-small' ) ) . '" alt="">';
+                                    }
+                                    ?>
+                                    <div class="nav-card-overlay">
+                                        <span class="nav-card-title"><?php echo esc_html( get_the_title( $next_post ) ); ?></span>
+                                    </div>
+                                </a>
+                            <?php endif; ?>
+                        </div>
+                    </nav>
+                    <?php
+                endif;
                 $related = new WP_Query( array(
                     'posts_per_page'      => 3,
                     'post__not_in'        => array( get_the_ID() ),

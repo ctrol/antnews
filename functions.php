@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'ANTNEWS_VERSION', '6.11.5' );
+define( 'ANTNEWS_VERSION', '6.11.7' );
 define( 'ANTNEWS_DIR', get_template_directory() );
 define( 'ANTNEWS_URI', get_template_directory_uri() );
 
